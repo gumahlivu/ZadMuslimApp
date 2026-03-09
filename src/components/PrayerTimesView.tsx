@@ -220,11 +220,14 @@ export default function PrayerTimesView() {
       animate={{ opacity: 1 }}
       className="h-full flex flex-col"
     >
-      <audio 
-        ref={audioRef} 
-        src="https://server8.mp3quran.net/adhan/Alafasi.mp3" 
-        preload="auto"
-      />
+      <audio ref={audioRef} preload="auto">
+        {/* Primary: Mishary Alafasy Adhan */}
+        <source src="https://www.islamcan.com/audio/adhan/azan3.mp3" type="audio/mpeg" />
+        {/* Fallback 1: Another Adhan */}
+        <source src="https://www.islamcan.com/audio/adhan/azan1.mp3" type="audio/mpeg" />
+        {/* Fallback 2: Surah Al-Fatiha by Alafasy as last resort */}
+        <source src="https://server11.mp3quran.net/Alafasi/001.mp3" type="audio/mpeg" />
+      </audio>
 
       <div className="flex items-center justify-between mb-4">
         <h1 className="text-2xl font-bold text-slate-800 flex items-center">
